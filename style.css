@@ -147,7 +147,6 @@ body::before {
   font-size: 1.1rem;
   color: var(--text-secondary);
   font-weight: 600;
-  margin-bottom: 12px;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -165,6 +164,23 @@ body::before {
 
 .clan-tag:active {
   transform: scale(0.98);
+}
+
+.clan-tag-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out 0.7s backwards;
+}
+
+.clan-tag-label {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* Copy notification */
@@ -229,6 +245,14 @@ body::before {
   animation-delay: 0.4s;
 }
 
+.link-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.link-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
 .link-card::before {
   content: "";
   position: absolute;
@@ -276,6 +300,14 @@ body::before {
 
 .stats .link-icon {
   background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+.stats-akatsuki .link-icon {
+  background: linear-gradient(135deg, #dc2626 0%, #111827 100%);
+}
+
+.calculator .link-icon {
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
 }
 
 .link-icon svg {

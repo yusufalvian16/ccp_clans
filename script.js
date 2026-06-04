@@ -1,12 +1,13 @@
 // Add smooth interactions and analytics tracking
 document.addEventListener('DOMContentLoaded', () => {
     // Copy clan tag to clipboard
-    const clanTag = document.getElementById('clanTag');
+    const clanTags = document.querySelectorAll('.clan-tag, .clan-tag-inline');
     const copyNotification = document.getElementById('copyNotification');
     
-    if (clanTag) {
-        clanTag.addEventListener('click', async function() {
-            const tagText = this.textContent;
+    clanTags.forEach(clanTag => {
+        clanTag.addEventListener('click', async function(e) {
+            e.stopPropagation(); // Stop parent link click
+            const tagText = this.textContent.trim();
             
             try {
                 // Modern clipboard API
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000);
             }
         });
-    }
+    });
     
     // Add ripple effect on card click
     const linkCards = document.querySelectorAll('.link-card');
